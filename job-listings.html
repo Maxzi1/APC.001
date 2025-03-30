@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings - CareerConnect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">CareerConnect</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="job-listings.html" class="active">Job Listings</a>
+            <a href="talent-pool.html">Talent Pool</a>
+            <a href="events.html">Events</a>
+            <a href="#" class="sign-in">Sign In</a>
+        </div>
+    </nav>
+
+    <main class="job-listings-page">
+        <header class="page-header">
+            <h1>Job Listings</h1>
+            <p>Browse hundreds of opportunities across various industries and locations.</p>
+        </header>
+
+        <section class="filters-section">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label>Industry</label>
+                    <select class="filter-select">
+                        <option value="">All Industries</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Location</label>
+                    <select class="filter-select">
+                        <option value="">All Locations</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Job Type</label>
+                    <select class="filter-select">
+                        <option value="">All Types</option>
+                    </select>
+                </div>
+
+                <div class="filter-group keywords">
+                    <label>Keywords</label>
+                    <input type="text" placeholder="Search for skills, titles, etc." class="filter-input">
+                </div>
+
+                <div class="filter-actions">
+                    <button class="apply-filters">Apply Filters</button>
+                    <button class="reset-filters">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="jobs-grid">
+            <div class="job-card">
+                <div class="job-header">
+                    <h3>Full-Stack Developer</h3>
+                    <p class="company">FinTech Innovations Inc.</p>
+                </div>
+                <div class="job-details">
+                    <div class="detail-item">
+                        <span class="location-icon"></span>
+                        <span>New York (Hybrid)</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="type-icon"></span>
+                        <span>Full-time</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="salary-icon"></span>
+                        <span>$90,000 - $120,000</span>
+                    </div>
+                </div>
+                <div class="skills-tags">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">MongoDB</span>
+                </div>
+                <div class="job-footer">
+                    <span class="posted-date">Posted 2 days ago</span>
+                    <a href="#" class="view-details">View Details</a>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <h3>IT Project Manager</h3>
+                    <p class="company">Global Systems Solutions</p>
+                </div>
+                <div class="job-details">
+                    <div class="detail-item">
+                        <span class="location-icon"></span>
+                        <span>Remote</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="type-icon"></span>
+                        <span>Full-time</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="salary-icon"></span>
+                        <span>$100,000 - $130,000</span>
+                    </div>
+                </div>
+                <div class="skills-tags">
+                    <span class="skill-tag">Agile</span>
+                    <span class="skill-tag">PRINCE2</span>
+                    <span class="skill-tag">Scrum</span>
+                    <span class="skill-tag">PMP</span>
+                </div>
+                <div class="job-footer">
+                    <span class="posted-date">Posted 1 week ago</span>
+                    <a href="#" class="view-details">View Details</a>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <h3>Data Scientist</h3>
+                    <p class="company">AI Innovations Lab</p>
+                </div>
+                <div class="job-details">
+                    <div class="detail-item">
+                        <span class="location-icon"></span>
+                        <span>San Francisco (On-site)</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="type-icon"></span>
+                        <span>Full-time</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="salary-icon"></span>
+                        <span>$110,000 - $150,000</span>
+                    </div>
+                </div>
+                <div class="skills-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">R</span>
+                    <span class="skill-tag">Machine Learning</span>
+                </div>
+                <div class="job-footer">
+                    <span class="posted-date">Posted 3 days ago</span>
+                    <a href="#" class="view-details">View Details</a>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="job-header">
+                    <h3>Digital Marketing Specialist</h3>
+                    <p class="company">Growth Marketing Partners</p>
+                </div>
+                <div class="job-details">
+                    <div class="detail-item">
+                        <span class="location-icon"></span>
+                        <span>London (Hybrid)</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="type-icon"></span>
+                        <span>Full-time</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="salary-icon"></span>
+                        <span>£45,000 - £65,000</span>
+                    </div>
+                </div>
+                <div class="skills-tags">
+                    <span class="skill-tag">SEO</span>
+                    <span class="skill-tag">Analytics</span>
+                    <span class="skill-tag">Content</span>
+                    <span class="skill-tag">Social Media</span>
+                </div>
+                <div class="job-footer">
+                    <span class="posted-date">Posted 5 days ago</span>
+                    <a href="#" class="view-details">View Details</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">»</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CareerConnect</h3>
+                <p>About Us</p>
+                <p>Contact</p>
+                <p>Privacy Policy</p>
+                <p>Terms of Service</p>
+            </div>
+            <div class="footer-section">
+                <h3>For Job Seekers</h3>
+                <p>Browse Jobs</p>
+                <p>Career Resources</p>
+                <p>Resume Tips</p>
+                <p>Interview Prep</p>
+            </div>
+            <div class="footer-section">
+                <h3>For Employers</h3>
+                <p>Post a Job</p>
+                <p>Browse Talent</p>
+                <p>Pricing</p>
+                <p>Resources</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <p>Facebook</p>
+                <p>Twitter</p>
+                <p>LinkedIn</p>
+                <p>Instagram</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 CareerConnect. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

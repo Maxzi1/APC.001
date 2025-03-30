@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerConnect - Talent Pool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">CareerConnect</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="job-listings.html">Job Listings</a>
+            <a href="talent-pool.html" class="active">Talent Pool</a>
+            <a href="events.html">Events</a>
+            <a href="#" class="sign-in">Sign In</a>
+        </div>
+    </nav>
+
+    <main class="talent-pool-page">
+        <div class="page-header">
+            <h1>Talent Pool</h1>
+            <p>Connect with skilled professionals ready to contribute to your organization.</p>
+        </div>
+
+        <div class="filters-section">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="skills">Skills</label>
+                    <select id="skills">
+                        <option value="">All Skills</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="experience">Experience Level</label>
+                    <select id="experience">
+                        <option value="">All Experience Levels</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="availability">Availability</label>
+                    <select id="availability">
+                        <option value="">All</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="location">Location</label>
+                    <select id="location">
+                        <option value="">All Locations</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="apply-filters">Apply Filters</button>
+                <button class="reset-filters">Reset</button>
+            </div>
+        </div>
+
+        <div class="talent-grid">
+            <div class="talent-card">
+                <div class="talent-header">
+                    <div class="talent-initials">JS</div>
+                    <div class="talent-info">
+                        <h3>John Smith</h3>
+                        <p>Full-Stack Developer with 5 years experience in fintech</p>
+                    </div>
+                </div>
+
+                <div class="talent-details">
+                    <div class="detail-item">
+                        <span class="location-icon"></span>
+                        <span>New York (Open to Remote)</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="employment-icon"></span>
+                        <span>Full-time, Contract</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="experience-icon"></span>
+                        <span>5 years experience</span>
+                    </div>
+                </div>
+
+                <div class="skills-tags">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">AWS</span>
+                </div>
+
+                <p class="talent-description">
+                    Experienced Full-Stack Developer with a strong focus on building scalable financial applications. Passionate about clean code and innovative solutions.
+                </p>
+
+                <div class="talent-footer">
+                    <span class="availability">Available Now</span>
+                    <a href="#" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <div class="talent-card">
+                <div class="talent-header">
+                    <div class="talent-initials">SJ</div>
+                    <div class="talent-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>PMP-certified with 8 years experience in IT transformation</p>
+                    </div>
+                </div>
+
+                <div class="talent-details">
+                    <div class="detail-item">
+                        <span class="location-icon"></span>
+                        <span>Remote</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="employment-icon"></span>
+                        <span>Full-time</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="experience-icon"></span>
+                        <span>8 years experience</span>
+                    </div>
+                </div>
+
+                <div class="skills-tags">
+                    <span class="skill-tag">Agile</span>
+                    <span class="skill-tag">PRINCE2</span>
+                    <span class="skill-tag">Scrum</span>
+                </div>
+
+                <p class="talent-description">
+                    PMP-certified Project Manager with proven track record of delivering complex IT transformation projects on time and within budget. Skilled in stakeholder management.
+                </p>
+
+                <div class="talent-footer">
+                    <span class="availability">Available in 2 weeks</span>
+                    <a href="#" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <div class="talent-card">
+                <div class="talent-header">
+                    <div class="talent-initials">RL</div>
+                    <div class="talent-info">
+                        <h3>Robert Lee</h3>
+                        <p>PhD in Statistics with focus on AI and machine learning</p>
+                    </div>
+                </div>
+
+                <div class="talent-details">
+                    <div class="detail-item">
+                        <span class="location-icon"></span>
+                        <span>San Francisco (Hybrid)</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="employment-icon"></span>
+                        <span>Full-time, Part-time</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="experience-icon"></span>
+                        <span>7 years experience</span>
+                    </div>
+                </div>
+
+                <div class="skills-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">R</span>
+                </div>
+
+                <p class="talent-description">
+                    Data Scientist with PhD in Statistics specializing in machine learning algorithms and predictive modeling. Published author with research experience in NLP.
+                </p>
+
+                <div class="talent-footer">
+                    <span class="availability">Available Now</span>
+                    <a href="#" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <div class="talent-card">
+                <div class="talent-header">
+                    <div class="talent-initials">EC</div>
+                    <div class="talent-info">
+                        <h3>Emily Chen</h3>
+                        <p>Digital Marketing Specialist with focus on growth strategies</p>
+                    </div>
+                </div>
+
+                <div class="talent-details">
+                    <div class="detail-item">
+                        <span class="location-icon"></span>
+                        <span>London (Remote)</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="employment-icon"></span>
+                        <span>Contract, Freelance</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="experience-icon"></span>
+                        <span>6 years experience</span>
+                    </div>
+                </div>
+
+                <div class="skills-tags">
+                    <span class="skill-tag">SEO</span>
+                    <span class="skill-tag">Analytics</span>
+                    <span class="skill-tag">Content</span>
+                </div>
+
+                <p class="talent-description">
+                    Digital Marketing Specialist with expertise in growth marketing, SEO, and content strategy. Proven track record of increasing organic traffic and conversion rates.
+                </p>
+
+                <div class="talent-footer">
+                    <span class="availability">Available Now</span>
+                    <a href="#" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <div class="talent-card">
+                <div class="talent-header">
+                    <div class="talent-initials">AT</div>
+                    <div class="talent-info">
+                        <h3>Alex Thompson</h3>
+                        <p>UX/UI Designer with background in product design</p>
+                    </div>
+                </div>
+
+                <div class="talent-details">
+                    <div class="detail-item">
+                        <span class="location-icon"></span>
+                        <span>Remote</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="employment-icon"></span>
+                        <span>Full-time, Contract</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="experience-icon"></span>
+                        <span>4 years experience</span>
+                    </div>
+                </div>
+
+                <div class="skills-tags">
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Adobe XD</span>
+                    <span class="skill-tag">Prototyping</span>
+                </div>
+
+                <p class="talent-description">
+                    Creative UX/UI Designer with a strong portfolio of digital products. Experienced in user research, wireframing, and creating high-fidelity prototypes.
+                </p>
+
+                <div class="talent-footer">
+                    <span class="availability">Available in 1 month</span>
+                    <a href="#" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <div class="talent-card">
+                <div class="talent-header">
+                    <div class="talent-initials">MP</div>
+                    <div class="talent-info">
+                        <h3>Michael Patel</h3>
+                        <p>DevOps Engineer with cloud infrastructure expertise</p>
+                    </div>
+                </div>
+
+                <div class="talent-details">
+                    <div class="detail-item">
+                        <span class="location-icon"></span>
+                        <span>Singapore (Hybrid)</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="employment-icon"></span>
+                        <span>Full-time</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="experience-icon"></span>
+                        <span>7 years experience</span>
+                    </div>
+                </div>
+
+                <div class="skills-tags">
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">AWS</span>
+                </div>
+
+                <p class="talent-description">
+                    DevOps Engineer with extensive experience in cloud architecture, CI/CD, and containerization. Expertise in automating deployments and optimizing infrastructure.
+                </p>
+
+                <div class="talent-footer">
+                    <span class="availability">Available Now</span>
+                    <a href="#" class="view-profile">View Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <span class="active">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#" class="next">»</a>
+        </div>
+
+        <section class="hiring-manager-cta">
+            <h2>Are You a Hiring Manager?</h2>
+            <p>Create an employer account to connect with top talent, post jobs, and build your dream team.</p>
+            <a href="#" class="create-account-btn">Create Employer Account</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CareerConnect</h3>
+                <p>About Us</p>
+                <p>Contact</p>
+                <p>Privacy Policy</p>
+                <p>Terms of Service</p>
+            </div>
+            <div class="footer-section">
+                <h3>For Job Seekers</h3>
+                <p>Browse Jobs</p>
+                <p>Career Resources</p>
+                <p>Resume Tips</p>
+                <p>Interview Prep</p>
+            </div>
+            <div class="footer-section">
+                <h3>For Employers</h3>
+                <p>Post a Job</p>
+                <p>Browse Talent</p>
+                <p>Pricing</p>
+                <p>Resources</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <p>Facebook</p>
+                <p>Twitter</p>
+                <p>LinkedIn</p>
+                <p>Instagram</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 CareerConnect. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
