@@ -178,6 +178,8 @@ body {
 /* Featured Talent Section */
 .featured-talent {
     padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .section-header {
@@ -203,24 +205,65 @@ body {
 }
 
 .talent-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    padding: 1rem 0;
+    flex-wrap: nowrap;
+}
+
+.talent-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .talent-card {
+    flex: 0 0 300px;
     background: var(--white);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    min-width: 300px;
 }
 
 .talent-card:hover {
     transform: translateY(-5px);
     border: 1px solid #1976D2;
+}
+
+.slide-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.slide-nav:hover {
+    background: var(--light-bg);
+}
+
+.slide-prev {
+    left: 1rem;
+}
+
+.slide-next {
+    right: 1rem;
 }
 
 .profile-img {
@@ -919,6 +962,8 @@ footer {
 .page-header {
     text-align: center;
     margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--light-bg);
 }
 
 .page-header h1 {
@@ -938,6 +983,7 @@ footer {
     padding: 1.5rem;
     margin-bottom: 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
 }
 
 .filters-container {
@@ -960,16 +1006,19 @@ footer {
 
 .filter-group select {
     padding: 0.75rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid #e0e0e0;
     border-radius: 4px;
     font-size: 1rem;
     color: var(--text-primary);
+    background-color: #fff;
 }
 
 .filter-buttons {
     display: flex;
     gap: 1rem;
     justify-content: flex-start;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
 }
 
 .apply-filters {
@@ -986,7 +1035,7 @@ footer {
     background-color: transparent;
     color: var(--text-secondary);
     padding: 0.75rem 1.5rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid #e0e0e0;
     border-radius: 4px;
     cursor: pointer;
     font-weight: 500;
@@ -1005,17 +1054,21 @@ footer {
     padding: 1.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
+    border: 1px solid #e0e0e0;
 }
 
 .talent-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
 }
 
 .talent-header {
     display: flex;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .talent-initials {
@@ -1029,6 +1082,7 @@ footer {
     justify-content: center;
     font-weight: 600;
     font-size: 1.2rem;
+    border: 2px solid var(--primary-color);
 }
 
 .talent-info h3 {
@@ -1045,6 +1099,8 @@ footer {
 
 .talent-details {
     margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .detail-item {
@@ -1061,6 +1117,8 @@ footer {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .skill-tag {
@@ -1070,6 +1128,7 @@ footer {
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 500;
+    border: 1px solid var(--primary-color);
 }
 
 .talent-description {
@@ -1077,6 +1136,8 @@ footer {
     font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .talent-footer {
@@ -1084,12 +1145,25 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
+    padding-top: 1rem;
 }
 
 .availability {
     color: var(--success-color);
     font-size: 0.9rem;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.availability::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--success-color);
+    border-radius: 50%;
 }
 
 .view-profile {
@@ -1097,6 +1171,16 @@ footer {
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.view-profile:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateX(5px);
 }
 
 .pagination {
@@ -1104,6 +1188,8 @@ footer {
     justify-content: center;
     gap: 0.5rem;
     margin: 2rem 0;
+    padding-top: 2rem;
+    border-top: 2px solid var(--light-bg);
 }
 
 .pagination a, .pagination span {
@@ -1111,16 +1197,19 @@ footer {
     border-radius: 4px;
     text-decoration: none;
     color: var(--text-secondary);
+    border: 1px solid #e0e0e0;
 }
 
 .pagination .active {
     background-color: var(--primary-color);
     color: white;
+    border-color: var(--primary-color);
 }
 
 .pagination a:hover {
     background-color: var(--primary-light);
     color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .hiring-manager-cta {
@@ -1130,6 +1219,7 @@ footer {
     padding: 3rem 2rem;
     border-radius: 8px;
     margin: 3rem 0;
+    border: 2px solid var(--secondary-color);
 }
 
 .hiring-manager-cta h2 {
@@ -1189,4 +1279,258 @@ footer {
     .talent-card {
         padding: 1rem;
     }
+}
+
+/* Global transition for all interactive elements */
+button, a, .talent-card, .news-card, .link-card, .story-card {
+    transition: all 0.3s ease;
+}
+
+/* Button hover effects */
+.login-btn, .register-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn:hover, .register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.login-btn:active, .register-btn:active {
+    transform: translateY(0);
+}
+
+/* Search button animation */
+.search-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.search-btn:active {
+    transform: translateY(0);
+}
+
+/* Talent card animations */
+.talent-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.talent-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.talent-card:active {
+    transform: translateY(-4px);
+}
+
+/* View profile button animation */
+.talent-card .view-profile {
+    width: calc(100% - 2rem); /* Account for margins */
+    padding: 1rem;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    margin: 0 1rem 1rem 1rem;
+    display: block; /* Ensure block display */
+    text-align: center; /* Center the text */
+}
+
+.talent-card .view-profile:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.talent-card .view-profile:active {
+    transform: translateY(0);
+}
+
+/* Quick links card animations */
+.link-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.link-card button {
+    position: relative;
+    overflow: hidden;
+}
+
+.link-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* News card animations */
+.news-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.read-more {
+    position: relative;
+    display: inline-block;
+}
+
+.read-more::after {
+    content: '→';
+    position: absolute;
+    right: -20px;
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover::after {
+    transform: translateX(5px);
+}
+
+/* Story card animations */
+.story-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.story-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* CTA button animations */
+.find-talent, .register-now {
+    position: relative;
+    overflow: hidden;
+}
+
+.find-talent:hover, .register-now:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.find-talent:active, .register-now:active {
+    transform: translateY(0);
+}
+
+/* Navigation link animations */
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Social icon animations */
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    background: var(--secondary-color);
+}
+
+/* Newsletter submit button animation */
+.submit-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Slide navigation button animations */
+.slide-nav {
+    transition: all 0.3s ease;
+}
+
+.slide-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.slide-nav:active {
+    transform: translateY(0);
+}
+
+/* Role tag animations */
+.role-tag {
+    transition: all 0.3s ease;
+}
+
+.role-tag:hover {
+    transform: scale(1.05);
+}
+
+/* Skills tag animations */
+.skills span {
+    transition: all 0.3s ease;
+}
+
+.skills span:hover {
+    transform: translateY(-2px);
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* View all link animation */
+.view-all {
+    position: relative;
+    display: inline-block;
+}
+
+.view-all::after {
+    content: '→';
+    position: absolute;
+    right: -20px;
+    transition: transform 0.3s ease;
+}
+
+.view-all:hover::after {
+    transform: translateX(5px);
+}
+
+/* Talent pool page view profile link */
+.talent-pool-page .view-profile {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.talent-pool-page .view-profile:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
 } 
