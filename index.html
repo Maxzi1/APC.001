@@ -68,11 +68,8 @@
     <section class="featured-talent">
         <div class="section-header">
             <h2>Featured <span>Talent</span></h2>
-            <a href="job-listings.html" class="view-all">View All →</a>
+            <a href="job-listings.html" class="view-all">View All</a>
         </div>
-        
-        <button class="slide-nav slide-prev" aria-label="Previous slide">←</button>
-        <button class="slide-nav slide-next" aria-label="Next slide">→</button>
         
         <div class="talent-grid">
             
@@ -180,7 +177,7 @@
     <section class="latest-news">
         <div class="section-header">
             <h2>Latest <span>News</span></h2>
-            <a href="#" class="view-all">View All →</a>
+            <a href="#" class="view-all">View All</a>
         </div>
         <div class="news-grid">
             <div class="news-card">
@@ -192,7 +189,7 @@
                     </div>
                     <h3>UK-Nigeria Trade Relations Strengthen with New Agreement</h3>
                     <p>New trade agreement opens opportunities for businesses across both countries...</p>
-                    <a href="#" class="read-more">Read More →</a>
+                    <a href="#" class="read-more">Read More</a>
                 </div>
             </div>
 
@@ -205,7 +202,7 @@
                     </div>
                     <h3>Tech Expansion Creates 5,000 New Jobs Across the UK</h3>
                     <p>Major tech companies announce new hiring initiatives focused on diverse talent...</p>
-                    <a href="#" class="read-more">Read More →</a>
+                    <a href="#" class="read-more">Read More</a>
                 </div>
             </div>
 
@@ -218,7 +215,7 @@
                     </div>
                     <h3>APC Diaspora Digital Launches Mentorship Program</h3>
                     <p>New initiative pairs experienced professionals with emerging talent...</p>
-                    <a href="#" class="read-more">Read More →</a>
+                    <a href="#" class="read-more">Read More</a>
                 </div>
             </div>
         </div>
@@ -318,41 +315,5 @@
             </div>
         </div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const talentGrid = document.querySelector('.talent-grid');
-            const prevButton = document.querySelector('.slide-prev');
-            const nextButton = document.querySelector('.slide-next');
-            const cardWidth = 320; // Width of card + gap
-            let scrollPosition = 0;
-
-            function scrollCards(direction) {
-                const maxScroll = talentGrid.scrollWidth - talentGrid.clientWidth;
-                scrollPosition += direction * cardWidth;
-                
-                // Ensure we don't scroll past the bounds
-                if (scrollPosition < 0) {
-                    scrollPosition = 0;
-                } else if (scrollPosition > maxScroll) {
-                    scrollPosition = maxScroll;
-                }
-
-                talentGrid.scrollTo({
-                    left: scrollPosition,
-                    behavior: 'smooth'
-                });
-            }
-
-            prevButton.addEventListener('click', () => scrollCards(-1));
-            nextButton.addEventListener('click', () => scrollCards(1));
-
-            // Update button visibility based on scroll position
-            talentGrid.addEventListener('scroll', () => {
-                const maxScroll = talentGrid.scrollWidth - talentGrid.clientWidth;
-                prevButton.style.opacity = talentGrid.scrollLeft > 0 ? '1' : '0.5';
-                nextButton.style.opacity = talentGrid.scrollLeft < maxScroll ? '1' : '0.5';
-            });
-        });
-    </script>
 </body>
 </html> 

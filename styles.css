@@ -1392,7 +1392,7 @@ button, a, .talent-card, .news-card, .link-card, .story-card {
     position: relative;
     display: inline-block;
 }
-
+/*
 .read-more::after {
     content: '→';
     position: absolute;
@@ -1403,7 +1403,7 @@ button, a, .talent-card, .news-card, .link-card, .story-card {
 .read-more:hover::after {
     transform: translateX(5px);
 }
-
+*/
 /* Story card animations */
 .story-card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1509,7 +1509,7 @@ button, a, .talent-card, .news-card, .link-card, .story-card {
     position: relative;
     display: inline-block;
 }
-
+/*
 .view-all::after {
     content: '→';
     position: absolute;
@@ -1520,7 +1520,7 @@ button, a, .talent-card, .news-card, .link-card, .story-card {
 .view-all:hover::after {
     transform: translateX(5px);
 }
-
+*/
 /* Talent pool page view profile link */
 .talent-pool-page .view-profile {
     color: var(--primary-color);
